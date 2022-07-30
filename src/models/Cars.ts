@@ -10,7 +10,11 @@ const carMongooseSchema = new Schema<ICar>({
   buyValue: Number,
   doorsQty: Number,
   seatsQty: Number,
+}, {
+  versionKey: false,
 });
+
+// retirada do versionKey tirado de https://stackoverflow.com/questions/12495891/what-is-the-v-field-in-mongoose
 
 class Car extends MongoModel<ICar> {
   constructor(model = mongooseCreateModel('Car', carMongooseSchema)) {
