@@ -9,4 +9,9 @@ export default class CarController {
     const createdCar = await this._service.create(req.body);
     return res.status(201).json(createdCar);
   }
+
+  public async find(_req: Request, res: Response) {
+    const carList = await this._service.read();
+    return res.status(200).json(carList);
+  }
 }
